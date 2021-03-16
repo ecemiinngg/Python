@@ -1,0 +1,7 @@
+#faktöriyel hesaplama 
+faktorial=1 
+num = int(input("faktöriyel alınacak sayıyı giriniz")) 
+#(başlanacak sayı, bitiş sayısı,artış miktarı) 
+for  a in range (num,0,-1):    
+  faktorial=faktorial*a 
+print("faktöriyel : ",faktorial) 
