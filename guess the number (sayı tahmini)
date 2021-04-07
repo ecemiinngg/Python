@@ -1,0 +1,19 @@
+import random 
+print("hello, whats u r name")
+name= input()
+number= random.randint(1,100)
+print("well"+name+", I am thinking a number between 1-100")
+print("guess 6 times")
+for  guessesTaken in range(1, 7):
+  print("take a guess")
+  guess= int(input())
+  if guess < number:
+    print("your guess is to low")
+  elif guess > number :
+    print("your guess is to high")
+  else:
+    break   
+if guess==number :
+  print("good job"+name+"you guessed my number in"+str(guessesTaken)+"guesess" )
+else:
+  print("nope, ı was thinking number is "+str(number))
