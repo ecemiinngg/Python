@@ -1,0 +1,20 @@
+def is_palindrom(problemstr) :
+  if problemstr == problemstr[::-1]:
+    return True
+  return False 
+
+run = True
+while (run):
+  problemstr = input("enter a string for testing palindrome or 'exit'")
+
+  if problemstr=="exit":
+    run = False
+    break 
+    
+  problemstr==problemstr.lower()
+  newstr= ""
+  for i in problemstr:
+    if i.isalnum():
+      newstr += i
+
+  print("palindrome string :", is_palindrom(newstr))
