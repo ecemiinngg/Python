@@ -1,0 +1,28 @@
+from datetime import time
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
+
+def main():
+    print(timedelta(days = 365 , hours = 5 ,minutes =1))
+    
+    now = datetime.now()
+    print("today :",now)
+    
+    print("one year later : ", str(now +timedelta(days=365))) #son kullanma tarihi vb. şeyler için kullanılabilir
+    
+    t= datetime.now() - timedelta(weeks=1)
+    s=t.strftime("%A %B %d %Y")
+    print("one wek ago",s)
+    
+    #tarih aralığı bulma
+    today = date.today()
+    cocukbayrami = date(today.year,4,23)
+    if cocukbayrami <today :
+        print ("already happened",((today - cocukbayrami).days))
+        cocukbayrami = cocukbayrami.replace(today.year+1)
+    time_to_cocukbayrami = cocukbayrami - today 
+    print("next 23 april : ",time_to_cocukbayrami)     
+if __name__ == '__main__':
+    main()
+    
