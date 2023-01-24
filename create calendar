@@ -1,0 +1,23 @@
+import calendar
+
+#Creating calendar 
+mycalendar = calendar.TextCalendar(calendar.MONDAY)
+str = mycalendar.formatmonth(2023, 1, 0 ,0)
+print(str)
+
+htmlcalendar = calendar.HTMLCalendar(calendar.MONDAY)
+strh = htmlcalendar.formatmonth(2023, 1)
+print(strh)
+
+print("team meetings days:")
+for m  in range (1,13):
+    cal = calendar.monthcalendar(2023, m)
+    weekone = cal[0]
+    weektwo = cal[1]
+    if weekone[calendar.FRIDAY !=0]:
+        meetday = weekone[calendar.FRIDAY]
+    else :
+        meetday = weektwo[calendar.FRIDAY]
+    print(calendar.month_name[m],meetday)    
+        
+        
