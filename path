@@ -1,0 +1,26 @@
+import os
+from os import path
+import datetime
+from datetime import date, time , timedelta
+import time
+
+def main():
+    print(os.name) 
+    print("Item exist:", str(path.exists("textfile.txt")))
+    print("item is a file : ", path.isfile("textfile.txt"))
+    print("item is a file : ", path.isdir("textfile.txt"))
+    print("item is a path: ", path.realpath("textfile.txt"))
+    
+    
+    #modification time
+    t=time.ctime(path.getmtime("textfile.txt"))
+    print(t)
+    print(datetime.datetime.fromtimestamp(path.getmtime("textfile.txt")))
+    
+    td = datetime.datetime.now() - datetime.datetime.fromtimestamp(path.getmtime("textfile.txt"))
+    print(td)
+
+
+
+if __name__ == '__main__':
+    main()
