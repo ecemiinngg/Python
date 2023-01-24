@@ -1,0 +1,22 @@
+from datetime import datetime
+
+def main():
+    #1-get date
+    now = datetime.now()
+    #2- format date
+    print(now.strftime("the current year : %Y"))
+    print(now.strftime("%a,%b,%d,%y")) # a = day of week , b = month , d= day
+    
+    #local time
+    print(now.strftime("locale date and  time : %c "))
+    print(now.strftime("locale date  : %x "))
+    print(now.strftime("locale time : %X "))
+    
+    #minute - seconds - hours
+    print(now.strftime("current time : %I : %M : %S %p"))
+    print(now.strftime("current time  24 hours : %H : %M "))
+
+
+if __name__ == '__main__':
+    main()
+    
