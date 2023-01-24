@@ -1,0 +1,22 @@
+from datetime import date
+from datetime import time 
+from datetime import datetime 
+
+
+
+def main() :
+    
+    today =date.today() #get today date
+    print("today date is :",today)
+    print("date components", today.day,today.month,today.year)
+    days=["pazartesi","salı","çarşamba","perşembe","cuma","cumartesi","pazar"]
+    print("today:",days[today.weekday()])
+    
+    todaytime = datetime.now()
+    print("the current time :",todaytime)
+    
+    t=datetime.time(datetime.now())
+    print("current time",t)
+    
+if __name__ == '__main__':
+    main()
