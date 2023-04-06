@@ -1,0 +1,30 @@
+import urllib.request
+import json
+import ssl 
+
+ssl._create_default_https_context = ssl._create_unverified_context  
+
+def printResults(data):
+    theJson = json.loads(data) 
+    if "title" in theJson["metadata"]:
+        print(theJson["metadata"]["title"])  
+    count = theJson["metadata"]["count"]
+    print(count,"events recorded")    
+    for i in theJson["features"]:
+        print(i["properties"]["mag"],i["properties"]["place"])
+    print(".........../n")    
+
+def main():
+    urlData = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson"
+    webUrl = urllib.request.urlopen(urlData)
+    print("result code:", str(webUrl.getcode()))
+    if webUrl.getcode() == 200 :
+        data = webUrl.read()    
+        printResults(data)  
+    else :
+        print("error code:", str(webUrl.getcode()))
+         
+    
+    
+if __name__ == '__main__':  
+    main()      
