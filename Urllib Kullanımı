@@ -1,0 +1,12 @@
+import urllib.request
+import urllib
+
+def main ():
+    weburl = urllib.request.urlopen("http://wwww.google.com")
+    print ("result code : ", weburl.getcode())
+    data = weburl.read()
+    print(data)
+if __name__ == "__main__":  
+    main()
+      
+      
